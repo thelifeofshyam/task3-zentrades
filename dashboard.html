@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ZenTrades</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Company-Metrics</h1>
+
+        <div class="metrics-container">
+            <div class="metric">
+                <h2>$64,492</h2>
+                <p>Total Revenue</p>
+            </div>
+            <div class="metric">
+                <h2>$608</h2>
+                <p>Total Jobs Avg</p>
+            </div>
+            <div class="metric">
+                <h2>106</h2>
+                <p>Tickets Created</p>
+            </div>
+            <div class="metric">
+                <h2>$19,304.52</h2>
+                <p>Outstanding Amount</p>
+            </div>
+            <div class="metric">
+                <h2>66</h2>
+                <p>Tickets Scheduled</p>
+            </div>
+            <div class="metric">
+                <h2>8</h2>
+                <p>Jobs Completed</p>
+            </div>
+        </div>
+        <div class="c">
+            <canvas id="chart"></canvas>
+        </div>
+        <div class="c">
+            <canvas id="chart1"></canvas>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+    <script>
+        const ctx = document.getElementById('chart').getContext('2d');
+        const chart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ['Social Circle', 'Malibu', 'New York', 'Everest', 'Seatle', 'London'],
+            datasets: [{
+            label: 'Revenue By Job Location',
+            data: [20000, 10000, 14000, 3000, 5000, 12000],
+            backgroundColor: '#FF7F50',
+            }],
+        },
+        options: {
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    categoryPercentage: 1.0,
+                    barPercentage: 0.4
+                }]
+            }
+        }
+        });
+    </script>
+</body>
+</html>
